@@ -1,65 +1,65 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col gap-10 px-6 py-12">
+      <section className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 px-8 py-14 text-white shadow-xl">
+        <div className="max-w-3xl">
+          <p className="text-sm uppercase tracking-[0.25em] text-slate-300">Golf meets charity</p>
+          <h1 className="mt-6 text-5xl font-semibold leading-tight">
+            Subscription-driven golf performance, monthly prize draws, and charity impact.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 max-w-2xl text-lg text-slate-300">
+            Enter your Stableford scores, support a featured charity, and participate in monthly draws for cash rewards. Designed for emotional engagement, not traditional golf clichés.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a href="/signup" className="rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300">
+              Subscribe Now
+            </a>
+            <a href="/charities" className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white">
+              Browse Charities
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-3">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Score Tracking</h2>
+          <p className="mt-3 text-slate-600">
+            Add your latest Stableford scores with one entry per date and keep only the most recent five results automatically.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Prize Draws</h2>
+          <p className="mt-3 text-slate-600">
+            Monthly draws, ranked payouts for 3/4/5 matches, and rollover jackpots when no top winner is found.
+          </p>
         </div>
-      </main>
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Charity Impact</h2>
+          <p className="mt-3 text-slate-600">
+            Choose a charity at signup and donate part of your subscription. Spotlight charities and donation tracking are built in.
+          </p>
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-2">
+        <div className="rounded-3xl bg-slate-950 p-8 text-white shadow-xl">
+          <h3 className="text-2xl font-semibold">How it works</h3>
+          <ul className="mt-6 space-y-4 text-slate-300">
+            <li>• Subscribe monthly or yearly to unlock scores, draws, and charity contributions.</li>
+            <li>• Submit new scores in Stableford format and track your progress.</li>
+            <li>• Enter the monthly draw and win prizes through match tiers.</li>
+          </ul>
+        </div>
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <h3 className="text-2xl font-semibold">Quick links</h3>
+          <div className="mt-6 grid gap-3">
+            <a href="/dashboard" className="rounded-2xl bg-slate-950 px-5 py-4 text-white transition hover:bg-slate-800">Dashboard</a>
+            <a href="/scores" className="rounded-2xl bg-slate-100 px-5 py-4 text-slate-900 transition hover:bg-slate-200">Score entry</a>
+            <a href="/draws" className="rounded-2xl bg-slate-100 px-5 py-4 text-slate-900 transition hover:bg-slate-200">Monthly draws</a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
