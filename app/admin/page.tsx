@@ -1,9 +1,15 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
-
 import { useRouter } from "next/navigation";
 import { supabase } from "../../supabase/client";
+
+// Replace with your admin email
+const ADMIN_EMAILS = [
+  "sushmats@gmail.com"
+];
+
+
 
 export default function AdminPage() {
   const router = useRouter();
