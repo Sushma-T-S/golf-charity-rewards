@@ -6,9 +6,9 @@ import { supabase } from "../../supabase/client";
 
 // Replace with your admin email
 const ADMIN_EMAILS = [
-  "sushmats@gmail.com"
+  "sushmats@gmail.com",
+  "YOUR_ACTUAL_LOGIN_EMAIL@gmail.com"
 ];
-
 
 
 export default function AdminPage() {
@@ -37,10 +37,13 @@ export default function AdminPage() {
         const { data: ud } = await supabase.auth.getUser();
         const userEmail = ud.user?.email?.toLowerCase();
 
-        if (!userEmail || !ADMIN_EMAILS.includes(userEmail)) {
-          router.push("/");
-          return;
-        }
+      if (!userEmail) {
+  router.push("/");
+  return;
+}
+
+// TEMPORARY: allow any logged-in user
+setIsAdmin(true);
 
         const { data: sessionData } = await supabase.auth.getSession();
         const accessToken = sessionData?.session?.access_token;
